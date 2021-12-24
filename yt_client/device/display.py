@@ -28,12 +28,18 @@ class Display:
         self._image = Image.new("1", (self._dis.width, self._dis.height))
 
     def clear(self):
+        draw = ImageDraw.Draw(self._image)
+        draw.rectangle((0, 0, self._dis.width, self._dis.height), outline=0, fill=0)
         self._dis.fill(0)
-        self._dis.show()
+        #self._dis.show()
 
     def write_text(self, line: int, text: str):
         draw = ImageDraw.Draw(self._image)
-        font = ImageFont.load_default()
+
+        # font = ImageFont.load_default()
+        font_size = 12
+        font_path = "/usr/share/fonts/truetype/freefont/FreeMono.ttf"
+        font = ImageFont.truetype(font_path, font_size)
         (font_width, font_height) = font.getsize(text)
         draw.text(
             (0, (line-1)*font_height+1),
