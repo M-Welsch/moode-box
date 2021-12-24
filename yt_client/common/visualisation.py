@@ -15,11 +15,11 @@ class Visualisation:
     def screen1(self) -> List[str]:
         fclk_percent = self._snapshot.cpu_fclk_cur / self._snapshot.cpu_fclk_max*100
         return [
-            f"CPU Load: {self._snapshot.cpu_load} %",
-            f"CPU Temp: {self._snapshot.cpu_temp} °C",
-            f"CPU Clk: {self._snapshot.cpu_fclk_cur} MHz",
-            f"{fclk_percent:.1f} % von clkmax",
-            f"Mem usage: {self._snapshot.memory_usage} %"
+            f"CPU Load: {self._snapshot.cpu_load}%",
+            f"CPU Temp: {self._snapshot.cpu_temp}°C",
+            f"CPU Clk: {self._snapshot.cpu_fclk_cur}MHz",
+            f"{fclk_percent:.1f}% von clkmax",
+            f"Mem usage: {self._snapshot.memory_usage}%"
         ]
 
     def screen2(self) -> List[str]:

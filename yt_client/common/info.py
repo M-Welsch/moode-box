@@ -36,6 +36,8 @@ class Info:
 
     def snapshot(self) -> SysInfo:
         fclk = psutil.cpu_freq()
+        if ":" in self._ips["eth0"] and ":" in self._ips["wlan0"]:
+            self.obtain_ips()
         return SysInfo(
             cpu_fclk_min=fclk.min,
             cpu_fclk_max=fclk.max,

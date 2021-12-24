@@ -6,11 +6,12 @@ from yt_client.device import Display, Fan
 
 
 class Loop:
-    def __init__(self):
+    def __init__(self, loop_cfg: dict):
         self._info = Info()
         self._display = Display()
         self._fan = Fan()
         self._vis = Visualisation(self._info)
+        self._cfg = loop_cfg
 
     def start(self):
         while True:
@@ -19,9 +20,9 @@ class Loop:
             self._vis.update_sysinfo()
             for index, line in enumerate(self._vis.screen1()):
                 self._display.write_text(index+1, line)
-            sleep(5)
+            sleep(self._cfg['screen_switch_interval_s'])
             self._display.clear()
             for index, line in enumerate(self._vis.screen2()):
                 self._display.write_text(index+1, line)
-            sleep(5)
+            sleep(self._cfg['screen_switch_interval_s'])
 
