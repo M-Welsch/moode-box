@@ -8,7 +8,7 @@ else:
 
 
 class Pins:
-    fan = 32
+    fan = 12  # GPIO 12 (BOARD) or pin 32 (BCM)
 
 
 class PinInterface:
@@ -25,8 +25,8 @@ class PinInterface:
             raise Exception("This class is a singleton!")
         else:
             PinInterface.__instance = self
-        GPIO.cleanup()
-        GPIO.setmode(GPIO.BOARD)
+        # GPIO.cleanup()
+        # GPIO.setmode(GPIO.BOARD)
         GPIO.setup(Pins.fan, GPIO.OUT)
         GPIO.output(Pins.fan, GPIO.LOW)
         self.fan_pwm = GPIO.PWM(Pins.fan, 1000)
