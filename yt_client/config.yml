@@ -1,2 +1,6 @@
 loop:
   screen_switch_interval_s: 10
+
+logging:
+  logfile_location: log
+  datalogfile_location: log
