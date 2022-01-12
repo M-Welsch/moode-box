@@ -29,7 +29,7 @@ class PinInterface:
         # GPIO.setmode(GPIO.BOARD)
         GPIO.setup(Pins.fan, GPIO.OUT)
         GPIO.output(Pins.fan, GPIO.LOW)
-        self.fan_pwm = GPIO.PWM(Pins.fan, 1000)
+        self.fan_pwm = GPIO.PWM(Pins.fan, 50)
         self.fan_pwm .start(100)
 
     def set_fan_dutycycle(self, dc: float):

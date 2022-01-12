@@ -1,5 +1,6 @@
 loop:
   screen_switch_interval_s: 10
+  fan_speed: 75
 
 logging:
   logfile_location: log

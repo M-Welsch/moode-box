@@ -18,7 +18,7 @@ class Loop:
 
     def start(self):
         while True:
-            self._fan.set_speed(100)
+            self._fan.set_speed(self._cfg["fan_speed"])
             self._display.clear()
             self._vis.update_sysinfo()
             for index, line in enumerate(self._vis.screen1()):
