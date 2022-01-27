@@ -1,0 +1,6 @@
+Pillow
+pytest
+psutil
+pathlib
+PyYAML
+adafruit-circuitpython-ssd1306
