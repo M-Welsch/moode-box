@@ -1,8 +1,8 @@
 [Service]
 Type=simple
-User=pi
-WorkingDirectory=/home/pi/Desktop
-ExecStart=python hmi
+User=max
+WorkingDirectory=/home/max
+ExecStart=/home/max/hmi/venv/bin/python hmi
 
 [Install]
 WantedBy=multi-user.target
