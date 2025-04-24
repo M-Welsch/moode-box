@@ -28,3 +28,6 @@ class Loop:
             for index, line in enumerate(self._vis.screen2()):
                 self._display.write_text(index+1, line)
             sleep(self._cfg['screen_switch_interval_s'])
+            self._display.clear()
+            self._display.show_sword()
+            sleep(self._cfg['screen_switch_interval_s'])

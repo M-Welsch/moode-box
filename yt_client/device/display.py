@@ -50,6 +50,16 @@ class Display:
         self._dis.image(self._image)
         self._dis.show()
 
+
+    def show_sword(self):
+        try:
+            image = Image.open("yt_client/sword.png")
+            self._dis.image(image)
+            self._dis.show()
+        except Exception as e:
+            print(str(e))
+
+
     def hello_world_test(self):
         image = Image.new("1", (self._dis.width, self._dis.height))
         draw = ImageDraw.Draw(image)
