@@ -1,4 +1,4 @@
-Pillow
+Pillow==9.4.0
 pytest
 psutil
 pathlib

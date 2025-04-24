@@ -5,7 +5,7 @@ from platform import platform
 
 
 def hardware() -> str:
-    if 'armv7l' in platform():
+    if 'rpi' in platform():
         return "rpi"
     else:
         return "laptop"

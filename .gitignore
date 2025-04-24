@@ -1,0 +1,6 @@
+*.log
+*.csv
+*.pyc
+*.swp
+/__pycache__
+/venv
